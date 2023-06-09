@@ -3,7 +3,9 @@ import axiosClient from "@/services/api-services";
 
 export const categoryService = {
   getAllCategory(params?): Promise<any> {
-    return axiosClient.get("/admin/categories", { params });
+    return axiosClient.get("/admin/categories", {
+      params: { status: "active" },
+    });
   },
 
   getProductById({ id }): Promise<any> {

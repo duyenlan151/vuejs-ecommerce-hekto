@@ -7,23 +7,13 @@ export const STATE = {
 
   // Products
   getAllProducts: "getAllProducts",
+
+  // Categories
+  getAllCategories: "getAllCategories",
 };
 
 export const GETTERS = {
-  getGender: "getGender",
-  getIdealLocations: "getIdealLocations",
-  getDjInfluence: "getDjInfluence",
-  getDjEventType: "getDjEventType",
-  getDjMusicGenre: "getDjMusicGenre",
-  getDjArtists: "getDjArtists",
-  getDjBillingCurrent: "getDjBillingCurrent",
-  getDjFavouriteType: "getDjFavouriteType",
-  getDjExperience: "getDjExperience",
-  getDjStyle: "getDjStyle",
-  getLanguage: "getLanguage",
-  getListVoucher: "getListVoucher",
-  getInstructionVoucher: "getInstructionVoucher",
-  getTypeOfBusiness: "getTypeOfBusiness",
+  ...STATE,
 };
 
 export const MUTATIONS = {
@@ -35,6 +25,10 @@ export const MUTATIONS = {
   // Products
   setProducts: "setProducts",
   getAllProducts: "getAllProducts",
+
+  // Categories
+  setCategories: "setCategories",
+  getAllCategoriess: "getAllCategoriess",
 };
 
 export const ACTIONS = {

@@ -156,10 +156,6 @@ export default {
     },
 
     loading() {
-      console.log(
-        "🚀 ~ file: ProductListPage.vue:152 ~ loading ~ this[STATE.getLoading]:",
-        this[STATE.getLoading]
-      );
       return this[STATE.getLoading];
     },
 
