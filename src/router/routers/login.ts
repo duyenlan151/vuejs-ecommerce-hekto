@@ -1,7 +1,7 @@
-import { homePath } from "../paths";
+import { loginPath } from "../paths";
 
 export const login = {
-  path: "/login",
+  path: loginPath,
   name: "login",
   component: () =>
     import(/* webpackChunkName: "login" */ "@/views/Login/Login.vue"),

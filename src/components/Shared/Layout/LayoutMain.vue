@@ -1,9 +1,9 @@
 <template>
   <v-layout>
-    <header>
+    <v-header>
       <top-navbar />
       <header-comp />
-    </header>
+    </v-header>
     <v-main>
       <router-view />
     </v-main>

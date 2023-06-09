@@ -13,42 +13,60 @@ export const sliderContent = [
     id: 1,
     title: "digitalBT",
     description: "digitalBD",
-    bgImg: "@/assets/images/slider-img/fashion-banner.webp",
+    bgImg: new URL(
+      `@/assets/images/slider-img/stationery-banner.webp`,
+      import.meta.url
+    ).href,
     url: "/",
   },
   {
     id: 2,
     title: "stationeryBT",
     description: "stationeryBD",
-    bgImg: "@/assets/images/slider-img/toy-banner.webp",
+    bgImg: new URL(
+      `@/assets/images/slider-img/toy-banner.webp`,
+      import.meta.url
+    ).href,
     url: "/",
   },
   {
     id: 3,
     title: "toyBT",
     description: "toyBD",
-    bgImg: "@/assets/images/slider-img/digital-banner.webp",
+    bgImg: new URL(
+      `@/assets/images/slider-img/digital-banner.webp`,
+      import.meta.url
+    ).href,
     url: "/",
   },
   {
     id: 4,
     title: "houseBT",
     description: "houseBD",
-    bgImg: "@/assets/images/slider-img/house-banner.webp",
+    bgImg: new URL(
+      `@/assets/images/slider-img/house-banner.webp`,
+      import.meta.url
+    ).href,
     url: "/",
   },
   {
     id: 5,
     title: "fashionBT",
     description: "fashionBD",
-    bgImg: "@/assets/images/slider-img/stationery-banner.webp",
+    bgImg: new URL(
+      `@/assets/images/slider-img/fashion-banner.webp`,
+      import.meta.url
+    ).href,
     url: "/",
   },
   {
     id: 6,
     title: "beautyBT",
     description: "beautyBD",
-    bgImg: "@/assets/images/slider-img/beauty-banner.webp",
+    bgImg: new URL(
+      `@/assets/images/slider-img/beauty-banner.webp`,
+      import.meta.url
+    ).href,
     url: "/",
   },
 ];

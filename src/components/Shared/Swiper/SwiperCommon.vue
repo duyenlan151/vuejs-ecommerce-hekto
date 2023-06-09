@@ -24,6 +24,8 @@
       :title="image.title"
       class="lg:min-h-[500px] min-h-[250px]"
     >
+      <!-- {{ image.bgImg }} -->
+      <!-- src="@/assets/images/slider-img/fashion-banner.webp" -->
       <img
         :src="image.bgImg"
         sizes="(max-width: 500px) 100vw, (max-width: 500px)"
@@ -80,6 +82,19 @@ export default {
   },
 
   created() {},
+
+  computed: {},
+
+  methods: {
+    getImgUrl(pet) {
+      var images = require.context("../assets/", false, /\.png$/);
+      return images("./" + pet + ".png");
+    },
+
+    imageSrc(selectedItem) {
+      return require(selectedItem);
+    },
+  },
 
   setup(props, { slots }) {
     const hasSlot = (name) => !!slots[name];

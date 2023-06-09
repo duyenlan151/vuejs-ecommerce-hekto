@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from "url";
 import * as path from "path";
+import { resolve, parse } from "path";
 
 import vue from "@vitejs/plugin-vue";
 import { defineConfig } from "vite";
@@ -54,6 +55,18 @@ export default defineConfig({
       "/socket.io": {
         target: "ws://localhost:5174",
         ws: true,
+      },
+    },
+  },
+  build: {
+    outDir: "./dist",
+    emptyOutDir: true,
+
+    rollupOptions: {
+      output: {
+        assetFileNames: (asset) => {
+          return "assets/images/[name].[hash][extname]";
+        },
       },
     },
   },

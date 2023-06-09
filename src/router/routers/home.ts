@@ -2,7 +2,10 @@ import { homePath } from "../paths";
 
 export const home = {
   path: homePath,
-  name: "home",
-  component: async () =>
-    await import(/* webpackChunkName: "thankyou" */ "@/views/Home/Home.vue"),
+  name: "Home",
+  component: () =>
+    import(/* webpackChunkName: "home" */ "@/views/Home/Home.vue"),
+  meta: {
+    layout: "LayoutMain",
+  },
 };
