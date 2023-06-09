@@ -1,8 +1,10 @@
 import { productsPath } from "../paths";
 
-export const home = {
+export const products = {
   path: productsPath,
   name: "products",
-  component: () =>
-    import(/* webpackChunkName: "thankyou" */ "@/views/Products/Products.vue"),
+  component: async () =>
+    await import(
+      /* webpackChunkName: "products" */ "@/views/Products/Products.vue"
+    ),
 };

@@ -4,5 +4,5 @@ export const login = {
   path: "/login",
   name: "login",
   component: () =>
-    import(/* webpackChunkName: "thankyou" */ "@/views/Login/Login.vue"),
+    import(/* webpackChunkName: "login" */ "@/views/Login/Login.vue"),
 };

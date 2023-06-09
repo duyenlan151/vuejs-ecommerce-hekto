@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { home, login } from "./routers";
+import { home, login, products } from "./routers";
 import NProgress from "@/utils/nprogress";
 
 NProgress.configure({
@@ -8,26 +8,7 @@ NProgress.configure({
   showSpinner: false,
 });
 
-const routes = [
-  home,
-  login,
-  {
-    path: "/products",
-    // component: Home,
-    component: () =>
-      import(
-        /* webpackChunkName: "thankyou" */ "@/views/Products/Products.vue"
-      ),
-  },
-  // {
-  //     path: '/about',
-  //     component: About
-  // },
-  // {
-  //     path: '/contact',
-  //     component: Contact
-  // },
-];
+const routes = [home, login, products];
 
 const router = createRouter({
   history: createWebHistory(),
