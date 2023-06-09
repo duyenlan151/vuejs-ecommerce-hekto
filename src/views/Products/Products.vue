@@ -19,9 +19,9 @@ export default {
   watch: {
     $route(to, from) {
       const {
-        query: { price, rating, sort },
+        query: { price, rating, sort, category },
       } = this.$route;
-      this.getAllProductsByParams({ price, rating, sort });
+      this.getAllProductsByParams({ price, rating, sort, category });
     },
   },
 
