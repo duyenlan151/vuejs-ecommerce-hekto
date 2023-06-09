@@ -3,6 +3,7 @@ export const STATE = {
 
   // Common
   getTotalDocs: "getTotalDocs",
+  getLoading: "getLoading",
 
   // Products
   getAllProducts: "getAllProducts",

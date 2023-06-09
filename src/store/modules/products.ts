@@ -20,6 +20,10 @@ const getters = {
   [STATE.getTotalDocs]: ({ products }: ProductsProps) => {
     return products.totalDocs;
   },
+
+  [STATE.getLoading]: ({ loading }: ProductsProps) => {
+    return loading;
+  },
 };
 
 const mutations = {

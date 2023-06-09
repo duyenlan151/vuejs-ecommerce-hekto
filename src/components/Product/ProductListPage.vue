@@ -41,11 +41,20 @@
         </div>
 
         <div class="flex-1 basis-full lg:ml-3 w-full justify-self-end">
-          <!-- {/* Filter Viewer */} -->
           <!-- <FilterViewer /> -->
           <filter-viewer />
           <!-- {/* Product List */} -->
           <div
+            v-if="loading"
+            :class="`grid justify-center items-center mx-auto gap-4 grid-cols-1 ${ProductViewType[type]}`"
+          >
+            <product-item-skeleton
+              v-for="item in new Array(6).fill('')"
+              :key="item"
+            />
+          </div>
+          <div
+            v-else
             :class="`grid justify-center items-center mx-auto gap-4 grid-cols-1 ${ProductViewType[type]}`"
           >
             <product-item-secondary
@@ -96,6 +105,7 @@ import IRow from "@/Icons/IRow.vue";
 import ProductFilters from "./ProductFilters.vue";
 import DropdownSelect from "../Shared/Dropdown/DropdownSelect.vue";
 import FilterViewer from "./Filters/FilterViewer.vue";
+import ProductItemSkeleton from "./ProductItem/ProductItemSkeleton.vue";
 export default {
   components: {
     ProductItemSecondary,
@@ -104,6 +114,7 @@ export default {
     ProductFilters,
     DropdownSelect,
     FilterViewer,
+    ProductItemSkeleton,
   },
 
   data() {
@@ -134,10 +145,22 @@ export default {
   },
 
   computed: {
-    ...mapGetters("products", [STATE.getAllProducts, STATE.getTotalDocs]),
+    ...mapGetters("products", [
+      STATE.getAllProducts,
+      STATE.getTotalDocs,
+      STATE.getLoading,
+    ]),
 
     products() {
       return this[STATE.getAllProducts];
+    },
+
+    loading() {
+      console.log(
+        "🚀 ~ file: ProductListPage.vue:152 ~ loading ~ this[STATE.getLoading]:",
+        this[STATE.getLoading]
+      );
+      return this[STATE.getLoading];
     },
 
     totalDocs() {
