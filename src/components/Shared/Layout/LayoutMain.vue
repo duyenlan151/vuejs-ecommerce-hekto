@@ -1,10 +1,14 @@
 <template>
-  <header>
-    <top-navbar />
-    <header-comp />
-  </header>
-  <slot name="content"></slot>
-  <footer-comp />
+  <v-layout>
+    <header>
+      <top-navbar />
+      <header-comp />
+    </header>
+    <v-main>
+      <router-view />
+    </v-main>
+    <footer-comp />
+  </v-layout>
 </template>
 
 <script>

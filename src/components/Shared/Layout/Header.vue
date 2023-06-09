@@ -5,12 +5,16 @@
     <div class="flex items-center justify-between container mx-auto">
       <div class="md:flex items-center">
         <h1 class="text-4xl font-bold mr-20">
-          <a href="/">Hekto</a>
+          <router-link to="/">Hekto</router-link>
         </h1>
-        <a class="mx-3 text-base" href="/"> Home </a>
-        <a class="mx-3 text-base" href="/products"> Products </a>
-        <a class="mx-3 text-base" href="/blog"> Blog </a>
-        <a class="mx-3 text-base" href="/contact"> Contact </a>
+        <router-link class="mx-3 text-base" to="/"> Home </router-link>
+        <router-link class="mx-3 text-base" to="/products">
+          Products
+        </router-link>
+        <router-link class="mx-3 text-base" to="/blog"> Blog </router-link>
+        <router-link class="mx-3 text-base" to="/contact">
+          Contact
+        </router-link>
       </div>
     </div>
   </div>

@@ -9,8 +9,10 @@ import store from "@/store";
 import { clickOutside } from "./directives/ClickoutSide";
 
 const app = createApp(App);
-app
-  .use(store)
-  .directive("click-outside", clickOutside)
-  .use(router)
-  .mount("#app");
+app.use(store);
+
+app.directive("click-outside", clickOutside);
+
+app.use(router);
+
+app.mount("#app");
