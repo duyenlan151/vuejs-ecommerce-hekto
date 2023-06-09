@@ -1,8 +1,6 @@
 <template>
   <div>
-    <swiper-common :navigation="true">
-      <!-- <template #footer> I'm a footer </template> -->
-    </swiper-common>
+    <swiper-common :navigation="true"> </swiper-common>
   </div>
 </template>
 

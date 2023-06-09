@@ -77,7 +77,8 @@ export const dataShopex: ShopexModel[] = [
     title: "24/7 Support",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
     // icon: <ITruckDelivery />,
-    imageUrl: "/images/shopex/image01.png",
+    imageUrl: new URL(`@/assets/images/shopex/image01.png`, import.meta.url)
+      .href,
   },
   {
     id: 2,
@@ -91,14 +92,16 @@ export const dataShopex: ShopexModel[] = [
     title: "24/7 Support",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
     // icon: <IPremium />,
-    imageUrl: "/images/shopex/image03.png",
+    imageUrl: new URL(`@/assets/images/shopex/image03.png`, import.meta.url)
+      .href,
   },
   {
     id: 4,
     title: "24/7 Support",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida.",
     // icon: <IHoursSupport />,
-    imageUrl: "/images/shopex/image04.png",
+    imageUrl: new URL(`@/assets/images/shopex/image04.png`, import.meta.url)
+      .href,
   },
 ];
 
@@ -134,7 +137,9 @@ export const dataBlogs = [
     desc: "More off this less hello samlande lied much over tightly circa horse taped mightly",
     author: "SaberAli",
     date: "21 August,2020",
-    thumbnail: ["@/assets/images/blogs/image01.png"],
+    thumbnail: [
+      new URL(`@/assets/images/blogs/image01.png`, import.meta.url).href,
+    ],
   },
   {
     id: 2,
@@ -142,7 +147,9 @@ export const dataBlogs = [
     desc: "More off this less hello samlande lied much over tightly circa horse taped mightly",
     author: "Surfauxion",
     date: "21 August,2020",
-    thumbnail: ["@/assets/images/blogs/image02.png"],
+    thumbnail: [
+      new URL(`@/assets/images/blogs/image02.png`, import.meta.url).href,
+    ],
   },
   {
     id: 3,
@@ -150,7 +157,9 @@ export const dataBlogs = [
     desc: "More off this less hello samlande lied much over tightly circa horse taped mightly",
     author: "SaberAli",
     date: "21 August,2020",
-    thumbnail: ["@/assets/images/blogs/image03.png"],
+    thumbnail: [
+      new URL(`@/assets/images/blogs/image03.png`, import.meta.url).href,
+    ],
   },
 ];
 
