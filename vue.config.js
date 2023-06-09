@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: "./",
+  publicPath: "/",
   // devServer: {
   //   proxy: {
   //     "^/users": {
@@ -11,5 +11,12 @@ module.exports = {
   // },
   devServer: {
     proxy: "https://ecommerce-hekto-dl.vercel.app/api/admin/products",
+  },
+  chainWebpack: (config) => {
+    config.module.rule("images").set("parser", {
+      dataUrlCondition: {
+        maxSize: 4 * 1024, // 4KiB
+      },
+    });
   },
 };
