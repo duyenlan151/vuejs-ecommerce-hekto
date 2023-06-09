@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+} from "vue-router";
 import { home, login, products } from "./routers";
 import NProgress from "@/utils/nprogress";
 
@@ -11,7 +15,7 @@ NProgress.configure({
 const routes = [home, login, products];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: routes,
 });
 
