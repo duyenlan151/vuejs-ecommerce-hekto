@@ -11,6 +11,7 @@ module.exports = {
   // },
   devServer: {
     proxy: "https://ecommerce-hekto-dl.vercel.app/api/admin/products",
+    devServer: { historyApiFallback: true },
   },
   chainWebpack: (config) => {
     config.module.rule("images").set("parser", {
