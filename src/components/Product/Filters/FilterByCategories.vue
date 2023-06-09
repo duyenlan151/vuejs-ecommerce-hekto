@@ -55,6 +55,15 @@ export default {
     },
   },
 
+  watch: {
+    $route() {
+      const {
+        query: { category },
+      } = this.$route;
+      this.category = category;
+    },
+  },
+
   methods: {
     ...mapActions("categories", [ACTIONS.getAllCategoriess]),
 

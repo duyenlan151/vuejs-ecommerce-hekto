@@ -26,6 +26,15 @@ export default {
     };
   },
 
+  watch: {
+    $route() {
+      const {
+        query: { price },
+      } = this.$route;
+      this.price = price;
+    },
+  },
+
   methods: {
     handleFilterByPrice(price) {
       this.price = price;
