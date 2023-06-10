@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white py-4 px-3 mb-2 flex items-center border-b border-primary"
+    class="bg-white py-4 px-3 mb-2 flex overflow-x-auto items-center border-b border-primary"
   >
     Filter:
     <div v-for="elm in FILTER_LIST" :key="elm.id">
@@ -17,12 +17,11 @@
             });
           }
         "
-        class="cursor-pointer flex items-center ml-4 border border-primary py-1 px-5 rounded-3xl hover:bg-gray-100 transition delay-100 ease-in-out duration-500"
+        class="cursor-pointer whitespace-nowrap flex items-center ml-4 border border-primary py-1 px-5 rounded-3xl hover:bg-gray-100 transition delay-100 ease-in-out duration-500"
       >
         {{ elm.getLabel(this.filters) }}
         <span className="ml-2 -mr-2 cursor-pointer">
           <i-close-circle />
-          <!-- <AiOutlineCloseCircle size="{16}" /> -->
         </span>
       </div>
     </div>

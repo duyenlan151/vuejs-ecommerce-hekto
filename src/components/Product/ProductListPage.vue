@@ -32,6 +32,12 @@
           @chosen="(data) => onChangeFilters('sort', data)"
           placeholder="Search for state..."
         />
+        <div
+          className="cursor-pointer pl-5 lg:hidden"
+          @click="handleOverlayFilter"
+        >
+          <i-filter-outline />
+        </div>
       </div>
       <div class="flex justify-between mt-2">
         <div class="max-w-[250px] basis-full lg:block hidden">
@@ -79,19 +85,18 @@
         </div>
       </div>
     </div>
-    <!-- <div
-        class="trasform translate-x-full ${
-          showOverlayFilter && '!-translate-x-full'
-        } w-[280px] lg:hidden bg-white h-full max-w-full overflow-x-hidden fixed z-50 top-0 left-full transition-transform duration-300 ease-out outline-none focus:outline-none"
-      >
-        <ProductFilters />
-      </div> -->
-    <!-- {showOverlayFilter && (
-        <div
-          onClick={handleOverlayFilter}
-          class="md:hidden animate-fadeEntering fixed inset-0 z-40 bg-black/60 transition-transform ease-in-out duration-500 opacity-100"
-        ></div>
-      )} -->
+    <div
+      :class="`trasform translate-x-full ${
+        showOverlayFilter && '!-translate-x-full'
+      } max-w-[280px] lg:hidden bg-white h-full w-full overflow-x-hidden fixed z-50 top-0 left-full transition-transform duration-300 ease-out outline-none focus:outline-none`"
+    >
+      <product-filters />
+    </div>
+    <div
+      v-if="showOverlayFilter"
+      @click="handleOverlayFilter"
+      class="lg:hidden animate-fadeEntering fixed inset-0 z-40 bg-black/60 transition-transform ease-in-out duration-500 opacity-100"
+    ></div>
   </section>
 </template>
 
@@ -106,6 +111,7 @@ import ProductFilters from "./ProductFilters.vue";
 import DropdownSelect from "../Shared/Dropdown/DropdownSelect.vue";
 import FilterViewer from "./Filters/FilterViewer.vue";
 import ProductItemSkeleton from "./ProductItem/ProductItemSkeleton.vue";
+import IFilterOutline from "@/Icons/IFilterOutline.vue";
 export default {
   components: {
     ProductItemSecondary,
@@ -115,6 +121,7 @@ export default {
     DropdownSelect,
     FilterViewer,
     ProductItemSkeleton,
+    IFilterOutline,
   },
 
   data() {
@@ -123,6 +130,7 @@ export default {
       formData: {
         client: "",
       },
+      showOverlayFilter: false,
       ETypeView,
       ProductViewType,
       type: [ETypeView.COL, ETypeView.ROW].includes(
@@ -140,7 +148,7 @@ export default {
       const {
         query: { view, price, rating, sort },
       } = this.$route;
-      this.type = view;
+      this.type = view || ETypeView.COL;
     },
   },
 
@@ -165,6 +173,14 @@ export default {
   },
 
   methods: {
+    handleOverlayFilter() {
+      this.showOverlayFilter = !this.showOverlayFilter;
+      console.log(
+        "🚀 ~ file: ProductListPage.vue:178 ~ handleOverlayFilter ~ this.showOverlayFilter:",
+        this.showOverlayFilter
+      );
+    },
+
     onChangeFilters(key, data) {
       let result = data;
       switch (key) {
