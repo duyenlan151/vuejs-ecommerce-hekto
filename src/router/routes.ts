@@ -16,18 +16,16 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/products",
     name: "products",
-    component: async () =>
-      await import(
+    component: () =>
+      import(
         /* webpackChunkName: "products" */ "@/views/Products/Products.vue"
       ),
   },
   {
     path: "/login",
     name: "login",
-    component: async () =>
-      await import(
-        /* webpackChunkName: "products" */ "@/views/Login/Login.vue"
-      ),
+    component: () =>
+      import(/* webpackChunkName: "products" */ "@/views/Login/Login.vue"),
   },
 ];
 
