@@ -5,7 +5,7 @@ import { home, products } from "./routers";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: homePath,
+    path: "/",
     name: "Home",
     component: () =>
       import(/* webpackChunkName: "home" */ "@/views/Home/Home.vue"),
@@ -14,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
-    path: productsPath,
+    path: "/products",
     name: "products",
     component: async () =>
       await import(
@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
       ),
   },
   {
-    path: loginPath,
+    path: "/login",
     name: "login",
     component: async () =>
       await import(
