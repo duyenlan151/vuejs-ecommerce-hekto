@@ -1,26 +1,22 @@
 export type PageData = {
   title: string;
-  description: string;
+  description?: string;
   image?: string;
-  keywords: string;
+  keywords?: string;
   breadcrumb?: string;
   suffix?: string;
   currentURL?: string;
   previewImage?: string;
+  type?: string;
+  url?: string;
 };
 
 export type PageMeta = {
-  home?: PageData;
+  home: PageData;
+  products: PageData;
   login: PageData;
-  // stats: PageData;
-  utilities: PageData;
   blogs: PageData;
-  bookmark: PageData;
-  certificates: PageData;
-  projects: PageData;
-  about: PageData;
-  privacy: PageData;
-  snippets: PageData;
-  ['404']: PageData;
+  contact: PageData;
+  ["404"]: PageData;
   [key: string]: any;
 };

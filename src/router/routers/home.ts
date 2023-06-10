@@ -1,3 +1,4 @@
+import pageMeta, { convertMetaData } from "@/content/meta";
 import { homePath } from "../paths";
 
 export const home = {
@@ -7,5 +8,8 @@ export const home = {
     import(/* webpackChunkName: "home" */ "@/views/Home/Home.vue"),
   meta: {
     layout: "LayoutMain",
+    ...pageMeta.home,
+
+    metaTags: convertMetaData(pageMeta.home),
   },
 };

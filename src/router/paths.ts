@@ -6,4 +6,10 @@ const productsPath = "/products";
 // Login
 const loginPath = "/login";
 
-export { homePath, productsPath, loginPath };
+// Blog
+const blogPath = "/blog";
+
+// Contact
+const contactPath = "/contact";
+
+export { homePath, productsPath, loginPath, blogPath, contactPath };

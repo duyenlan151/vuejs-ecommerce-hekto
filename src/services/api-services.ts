@@ -1,10 +1,8 @@
 import axios, { AxiosError } from "axios";
 
 const axiosClient = axios.create({
-  // baseURL: import.meta.env.VITE_BASE_URL,
-  baseURL: "https://ecommerce-hekto-dl.vercel.app/api",
-  // https://dummyjson.com/products
-  // withCredentials: true,
+  baseURL: import.meta.env.VITE_BASE_URL,
+  // baseURL: "https://ecommerce-hekto-dl.vercel.app/api",
   headers: {
     "Content-Type": "application/json",
     "Access-Control-Allow-Credentials": "true",
