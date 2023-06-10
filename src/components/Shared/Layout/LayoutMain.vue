@@ -1,14 +1,14 @@
 <template>
-  <v-layout>
-    <v-header>
+  <div>
+    <header>
       <top-navbar />
       <header-comp />
-    </v-header>
-    <v-main>
+    </header>
+    <main>
       <router-view />
-    </v-main>
+    </main>
     <footer-comp />
-  </v-layout>
+  </div>
 </template>
 
 <script>

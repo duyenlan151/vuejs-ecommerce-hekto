@@ -27,6 +27,20 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "products" */ "@/views/Login/Login.vue"),
   },
+  {
+    path: "/blog",
+    name: "blog",
+    component: () =>
+      import(
+        /* webpackChunkName: "products" */ "@/views/Products/Products.vue"
+      ),
+  },
+  {
+    path: "/contact",
+    name: "login",
+    component: () =>
+      import(/* webpackChunkName: "products" */ "@/views/Login/Login.vue"),
+  },
 ];
 
 export default routes;
