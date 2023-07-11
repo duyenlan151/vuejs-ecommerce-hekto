@@ -95,7 +95,7 @@
     <div
       v-if="showOverlayFilter"
       @click="handleOverlayFilter"
-      class="lg:hidden animate-fadeEntering fixed inset-0 z-40 bg-black/60 transition-transform ease-in-out duration-500 opacity-100"
+      class="lg:hidden animate-fadeEntering fixed inset-0 z-[666] bg-black/60 transition-transform ease-in-out duration-500 opacity-100"
     ></div>
   </section>
 </template>

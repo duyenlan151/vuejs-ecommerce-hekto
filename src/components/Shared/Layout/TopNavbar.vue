@@ -74,7 +74,7 @@
       <div
         v-if="show"
         @click="toggleShow"
-        class="md:hidden animate-fadeEntering fixed inset-0 z-40 bg-black/60 transition-transform ease-in-out duration-500 opacity-100"
+        class="md:hidden animate-fadeEntering fixed inset-0 z-[666] bg-black/60 transition-transform ease-in-out duration-500 opacity-100"
       ></div>
 
       <div

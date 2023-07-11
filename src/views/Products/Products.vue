@@ -18,10 +18,20 @@ export default {
 
   watch: {
     $route(to, from) {
-      const {
-        query: { price, rating, sort, category },
-      } = this.$route;
+      const newQuery = to.query;
+      // const oldQuery = from.query;
+      const { price, rating, sort, category } = newQuery;
+
       this.getAllProductsByParams({ price, rating, sort, category });
+      // Kiểm tra xem query nào đã thay đổi
+      // for (const key in newQuery) {
+      //   if (newQuery.hasOwnProperty(key) && newQuery[key] !== oldQuery[key]) {
+      //     if (!["row", "col"].includes(newQuery[key])) {
+      //       this.getAllProductsByParams({ price, rating, sort, category });
+      //       // Thực hiện hành động tương ứng khi query thay đổi
+      //     }
+      //   }
+      // }
     },
   },
 
@@ -31,8 +41,7 @@ export default {
     ...mapActions("products", [ACTIONS.getAllProducts]),
 
     async init() {
-      console.log("get all products");
-      await this[ACTIONS.getAllProducts]();
+      this.getAllProductsByParams();
     },
 
     async getAllProductsByParams(params) {
